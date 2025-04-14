@@ -20,12 +20,16 @@ def count_occurrences(text, target_word):
             before_ok = i == 0 or not is_letter(text[i - 1])
 
             after_index = i + word_length
-            after_ok = after_index == text_length or not is_letter
-            (text[after_index])
+            if after_index >= text_length:
+                after_ok = True
+            else:
+                after_ok = not is_letter(text[after_index])
 
             if before_ok and after_ok:
                 count_match_word += 1
+
         i += 1
+
     return count_match_word
 
 
@@ -93,4 +97,18 @@ def uppercase_to_lowercase(char):
             i += 1
         except IndexError:
             break
+
+        accented_map = {
+            "Á": "á",
+            "É": "é",
+            "Í": "í",
+            "Ó": "ó",
+            "Ú": "ú",
+            "Ü": "ü",
+            "Ñ": "ñ"
+        }
+
+    if char in accented_map:
+        return accented_map[char]
+
     return char  # If it's not an uppercase letter, return it unchanged
