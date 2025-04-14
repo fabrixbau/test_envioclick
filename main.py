@@ -2,6 +2,7 @@
 from exercise2 import sort_by_priority
 from input import data
 
+# def main to try the exercise 1
 
 # def main():
 #     paragraph = (
@@ -19,6 +20,9 @@ from input import data
 #     word = "logística"
 #     result = count_occurrences(paragraph, word)
 #     print(f"{result} ocurrencias encontradas.")
+
+
+# def main to try the exercise 2
 
 
 def main():
